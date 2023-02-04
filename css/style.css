@@ -1,0 +1,583 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ======== Variables ================*/
+:root {
+    /* ======== Colors ================*/
+
+    /* Background color */
+
+    --bg-purple: hsla(267, 100%, 63%, 1);
+    --bg-purple-alpha-30: hsla(267, 100%, 63%, 0.3);
+    --bg-dark-purple: hsla(279, 42%, 9%, 1);
+    --bg-oxford-blue: hsla(240, 63%, 13%, 1);
+    --bg-oxford-blue-alpha-95: hsla(240, 63%, 13%, 0.95);
+    --bg-oxford-blue-alpha-90: hsla(240, 63%, 13%, 0.9);
+    --bg-oxford-blue-alpha-80: hsla(240, 63%, 13%, 0.8);
+
+    /* Gradient color */
+
+    --gradient-1: linear-gradient(to right bottom, hsl(299, 100%, 52%), hsl(291, 100%, 58%), hsl(283, 100%, 60%), hsl(273, 100%, 62%), hsl(262, 100%, 63%), hsl(242, 100%, 69%), hsl(223, 100%, 62%), hsl(210, 100%, 50%), hsl(203, 100%, 50%), hsl(198, 100%, 50%), hsl(192, 100%, 48%), hsl(185, 90%, 48%));
+    --gradient-2: linear-gradient(90deg, transparent 0%, #9841ff 50%, transparent 100%);
+    
+    /* Text color */
+
+    --text-white: hsla(0, 0%, 100%, 1);
+    --text-gainsboro: hsla(0, 0%, 87%, 1);
+    --text-champagne-pink: hsla(23, 61%, 86%, 1);
+    --text-purple: hsla(267, 100%, 63%, 1);
+
+    /* Border color */
+
+    --border-space-cadet: hsl(240, 45%, 17%);
+    --border-purple-alpha-30: hsla(267, 100%, 63%, 0.3);
+
+    /* Typography */
+
+    --fontFamily-oxanium: 'Oxanium', cursive;
+    --fontFamily-work-sans: 'Work Sans', sans-serif;
+    --fontSize-1: 3.6rem;
+    --fontSize-2: 2.4rem;
+    --fontSize-3: 2rem;
+    --fontSize-4: 1.7rem;
+    --fontSize-5: 1.6rem;
+    --fontSize-6: 1.5rem;
+    --fontSize-7: 1rem;
+    --fontSize-8: 1.1rem;
+
+    --weight-regular: 400;
+    --weight-semiBold: 600;
+    --weight-bold: 700;
+
+    /* Spacing */
+
+    --section-spacing: 60px;
+
+    /* Shadow */
+
+    --shadow: 0px 2px 5px 0px hsla(0, 0%, 0%, 0.2);
+
+    /* Border Radius */
+
+    --radius-circle: 50%;
+    --radius-5: 5px;
+    --radius-3: 3px;
+
+    /* Clip path */
+
+    --clip-path-1: polygon(0 0, 100% 0, 100% 0, 0 0);
+    --clip-path-2: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    --clip-path-3: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);
+    --clip-path-4: polygon(90% 0, 100% 40%, 100% 100%, 0 100%, 0 0);
+    --clip-path-5: polygon(100% 0, 100% 100%, 10% 100%, 0 60%, 0 0);
+    --clip-path-6: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
+    --clip-path-7: polygon(100% 0, 100% 60%, 90% 100%, 0 100%, 0 0);
+    --clip-path-8: polygon(0% 0%, 70% 0, 100% 30%, 100% 100%, 0 100%);
+    --clip-path-9: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+
+    /* Transition */
+
+    --transition-1: 250ms ease;
+    --transition-2: 500ms ease;
+    --cubic-out: cubic-bezier(0.05, 0.83, 0.52, 0.97);
+}
+html {
+    scroll-behavior: smooth;
+}
+/* Body */
+body {
+    background-color: var(--bg-dark-purple);
+    background-image: url(../imgs/body-bg.jpg);
+    background-repeat: repeat;
+    color: var(--text-white);
+    font-family: var(--fontFamily-oxanium);
+    font-size: var(--fontSize-4);
+    font-weight: var(--weight-regular);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: #0000;
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: var(--text-purple);
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+/* Home */
+.home {
+    height: 130vh;
+}
+.home nav {
+    background-color: var(--bg-oxford-blue);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+.home nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.home nav .container .logo {
+    text-decoration: none;
+}
+.home nav .container .logo img {
+    width: 150px;
+}
+.home nav .container .links li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 25px;
+}
+.home nav .container .links li a {
+    text-decoration: none;
+    color: var(--text-white);
+    text-transform: uppercase;
+    font-size: var(--fontSize-7);
+    font-weight: var(--weight-semiBold);
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+.home nav .container .links li a:hover {
+    color: #9742ff;
+}
+.btn {
+    text-decoration: none;
+    color: var(--text-white);
+    font-size: 16px;
+    font-weight: var(--weight-semiBold);
+    background-image: var(--gradient-1);
+    padding: 15px 20px;
+    clip-path: var(--clip-path-3);
+    display: inline-flex;
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+.btn:hover {
+    background: #9742ff;
+}
+.home .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    text-align: center;
+}
+.home .content h4 {
+    color: var(--text-white);
+    font-weight: var(--weight-semiBold);
+    font-size: 16px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.home .content h1 {
+    font-size: 75px;
+    line-height: 1.1;
+    font-weight: var(--weight-semiBold);
+    margin-bottom: 20px;
+}
+.home .images {
+    width: 90%;
+    margin: auto;
+    position: absolute;
+    bottom: -220px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 400px;
+}
+.home .images img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.home .images .img0 {
+    width: 100%;
+    z-index: -1;
+}
+.home .images .img1 {
+    width: 850px;
+}
+
+/* Battles */
+
+.battles {
+    padding-top: var(--section-spacing);
+}
+.text {
+    width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: var(--section-spacing);
+}
+.text h5 {
+    font-size: 19px;
+    font-weight: var(--weight-regular);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.text h2 {
+    text-transform: uppercase;
+    font-size: 50px;
+    line-height: 1.2;
+    color: var(--text-gainsboro);
+}
+.text h2 span {
+    color: var(--text-purple);
+}
+.text p {
+    font-size: 18px;
+    width: 80%;
+    margin: 10px auto 0;
+}
+.battles .matches {
+    padding: 0 100px;
+}
+.battles .matches .match {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 180px;
+}
+.battles .matches .team {
+    width: 36%;
+    padding: 20px;
+    position: relative;
+}
+.battles .matches .team::before {
+    content: "";
+    display: block;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-image: var(--gradient-1);
+    z-index: -1;
+    top:0;
+    left:0;
+    opacity: 0.3;
+}
+.battles .matches .team-left::before {
+    clip-path: var(--clip-path-3);
+}
+.battles .matches .team-right::before {
+    clip-path: var(--clip-path-6);
+}
+.battles .matches .team img {
+    position: absolute;
+    top: 0;
+}
+.battles .matches .team-left img {
+    left: 0;
+    transform: translate(-60%,-20%);
+    -webkit-transform: translate(-60%,-20%);
+    -moz-transform: translate(-60%,-20%);
+    -ms-transform: translate(-60%,-20%);
+    -o-transform: translate(-60%,-20%);
+}
+.battles .matches .team-right img {
+    right: 0;
+    transform: translate(60%,-20%);
+    -webkit-transform: translate(60%,-20%);
+    -moz-transform: translate(60%,-20%);
+    -ms-transform: translate(60%,-20%);
+    -o-transform: translate(60%,-20%);
+}
+.battles .matches .team h3 {
+    width: 85%;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: var(--text-gainsboro);
+}
+.battles .matches .team-left h3 {
+    text-align: end;
+    margin-left: 5%;
+}
+.battles .matches .team-right h3 {
+    margin-left: 8%;
+}
+.battles .matches .team .description {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: var(--gradient-1);
+    font-size: 16px;
+    font-weight: var(--weight-regular);
+    padding: 15px;
+    border-radius: var(--radius-3);
+    -webkit-border-radius: var(--radius-3);
+    -moz-border-radius: var(--radius-3);
+    -ms-border-radius: var(--radius-3);
+    -o-border-radius: var(--radius-3);
+    width: 230px;
+}
+.battles .matches .team .description-left {
+    left: 53%;
+    clip-path: var(--clip-path-5);
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+.battles .matches .team .description-right {
+    right: 53%;
+    clip-path: var(--clip-path-7);
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+}
+.battles .matches .time {
+    text-align: center;
+    line-height: 1.1;
+}
+.battles .matches .time h3 {
+    font-size: 70px;
+}
+.battles .matches .time p {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+.battles .matches .time i {
+    font-size: 25px;
+    margin: 0 3px;
+    cursor: pointer;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+.battles .matches .time i:hover {
+    color: var(--text-purple);
+}
+
+/* News */
+.news {
+    padding-bottom: var(--section-spacing);
+}
+.news .headlines {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.news .headlines .card {
+    width: 31%;
+    background: var(--bg-oxford-blue-alpha-90);
+}
+.news .headlines .card .new-img {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.news .headlines .card .new-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.news .headlines .card .new-img span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size:16px;
+    background-image: var(--gradient-1);
+    padding: 5px 20px;
+    clip-path: var(--clip-path-3);
+}
+.news .headlines .card .new {
+    padding: 10px 35px;
+    position: relative;
+}
+.news .headlines .card .new span {
+    font-size: 15px;
+    font-weight: var(--weight-semiBold);
+    color: var(--text-champagne-pink);
+}
+.news .headlines .card .new i {
+    font-size: 16px;
+    margin: 0 3px;
+    color: var(--text-purple);
+}
+.news .headlines .card .new h4 {
+    font-size: 23px;
+    color: var(--text-gainsboro);
+    line-height: 1.4;
+    cursor: pointer;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+.news .headlines .card .new h4:hover {
+    text-decoration: underline;
+    color: var(--text-purple);
+}
+.news .headlines .card .new p {
+    font-size: 19px;
+    font-weight: var(--weight-regular);
+}
+.news .headlines .card .new .read {
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    cursor: pointer;
+    margin-left: 30px;
+}
+.news .headlines .card .new .read::before {
+    content: "";
+    height: 4px;
+    width: 25px;
+    background: var(--text-purple);
+    position: absolute;
+    bottom: 27px;
+    left: 30px;
+}
+.news .headlines .card .new .read:hover {
+    color: var(--text-purple);
+}
+
+/* Informations */
+
+.infos {
+    padding: calc(var(--section-spacing) * 2) 0;
+}
+.infos .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.infos .info {
+    width: 23%;
+    position: relative;
+    height: 400px;
+}
+.infos .info p {
+    font-size: 20px;
+    color: var(--text-gainsboro);
+    margin: 25px 0;
+}
+.infos .info .social {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+}
+.infos .info .social .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    font-size: 20px;
+    text-align: center;
+    background: var(--bg-purple-alpha-30);
+    height: 50px;
+    clip-path: var(--clip-path-8);
+    text-decoration: none;
+    color: var(--text-white);
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+.infos .info .social .icon:hover {
+    background: #9742ff;
+    transform: translateY(-2px);
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -o-transform: translateY(-2px);
+}
+.infos .info h4 {
+    font-size: 23px;
+    font-weight: var(--weight-semiBold);
+    margin-bottom: 30px;
+}
+.infos .info h4::before {
+    content: "";
+    height: 5px;
+    background: #9742ff;
+    position: absolute;
+    top: 33px;
+}
+.infos .info .links::before {
+    width: 70px;
+}
+.infos .info .contact::before {
+    width: 60px;
+}
+.infos .info .signup::before {
+    width: 100px;
+}
+.infos .info .link {
+    text-decoration: none;
+    color: var(--text-gainsboro);
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.infos .info .link:hover {
+    color: var(--text-purple);
+}
+.infos .info h5 {
+    font-size: 16px;
+    font-weight: var(--weight-semiBold);
+    color: var(--text-purple);
+}
+.infos .info:nth-child(3) p {
+    margin: 0 0 15px;
+}
+.infos .info input:first-of-type {
+    background-color: var(--bg-oxford-blue-alpha-90);
+    color: var(--text-white);
+    font-size: 18px;
+    padding: 23px 12px;
+    border: 2px solid var(--border-purple-alpha-30);
+    margin-block-end: 15px;
+    outline: none;
+    margin-bottom: 30px;
+}
+footer {
+    background-color: var(--bg-oxford-blue-alpha-80);
+    padding: 30px;
+    font-size: 16px;
+    color: var(--text-gainsboro);
+}
